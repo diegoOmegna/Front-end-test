@@ -4,9 +4,9 @@
     <TaskForm @add-task="addTask" />
     <TaskItem
       v-for="task in taskList"
-      :key="task.id"
+      :key="task.index"
       :task="task"
-      @toggle-complete="toggleTaskComplete"/>
+      @toggle-completed="toggleTaskComplete"/>
   </div>
 </template>
 
@@ -18,9 +18,9 @@ import TaskItem from './TaskItem.vue';
 const taskList = reactive([]);
 
 const addTask = (task) => {
-  const id = `${Date.now()}-${Math.floor(Math.random() * 1000000)}`;
+  const index = this.taskList.length + 1;
   taskList.push({
-    id,
+    index,
     task,
     isCompleted: null
   });
