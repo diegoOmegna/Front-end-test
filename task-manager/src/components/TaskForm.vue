@@ -22,12 +22,14 @@ const newTask = reactive({
 const addTask = () => {
   if (newTask !== null) {
     emit("add-task", newTask.task);
-    addTask.task = "";
+    newTask.task = "";
     return;
   }
 };
 </script>
 
 <style>
-
+input {
+  width: 95%;
+}
 </style>
