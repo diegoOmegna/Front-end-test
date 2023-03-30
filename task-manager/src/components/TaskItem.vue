@@ -20,10 +20,15 @@ defineProps({
     type: Object,
     required: true
     },
-    index: {
-      type: Number,
-      required: true
-    }
+  index: {
+    type: Number,
+    required: true
+  },
+  isCompleted: {
+    type: Boolean,
+    required: true
+  }
+
 });
 
 </script>
